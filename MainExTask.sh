@@ -34,6 +34,7 @@ then
 		bash MPIBuild.sh 2>&1 | tee MPIBuildLog.txt
 	else
 		echo "Main stage: Skipping of MPIBuild stage because MPIBuild.sh doesn't exist in $BuildDir, please chech if you download all files"
+		exit
 	fi
 else 
 	echo "Main stage: Skipping of MPIBuild stage because parameter BuildMPIThings was set to any value except TRUE"
@@ -47,6 +48,7 @@ then
 		bash MPITest.sh 2>&1 | tee MPITestLog.txt
 	else
 		echo "Main stage: Skipping of MPITest stage because MPITest.sh doesn't exist in $BuildDir, please chech if you download all files"
+		exit
 	fi
 else
 	echo "Main stage: Skipping of MPITest stage because parameter TestMPILibs was set to any value except TRUE"
@@ -60,6 +62,7 @@ then
 		bash MPITestResults.sh 2>&1 | tee MPITestResultsLog.txt
 	else
 		echo "Main stage: Skipping of MPITestResults stage because MPITestResults.sh doesn't exist in in $BuildDir, please chech if you download all files"
+		exit
 	fi
 else
 	echo "Main stage: Skipping of MPIBuild stage because parameter GetTestResults was set to any value except TRUE"
