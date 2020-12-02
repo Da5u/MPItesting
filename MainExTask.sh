@@ -10,7 +10,7 @@ MPITestResultsDir=MPITestResults
 # Defining of steps to perform
 BuildMPIThings=TRUE
 TestMPILibs=TRUE
-GetTestResults=TRUE
+GetTestResults=FALSE
 
 echo "Main stage: Starting of MainExTask.sh script with the following parameters: from directory $BuildDir at $TimeStamp, BuildMPIThings is $BuildMPIThings, TestMPILibs is $TestMPILibs and GetTestResults is $GetTestResults"
 
