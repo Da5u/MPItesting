@@ -33,7 +33,6 @@ mpirun -np 2 IMB-MPI1 PingPong -off_cache -1  2>&1 | tee -a MPIIBenchmarkTestRes
 # Running Benchmarks for MPICH
 echo "MPITest stage: Performing configuration of variables for MPICH test by Intel MPI Benchmarks"
 export PATH=$MPICHInstallDir/bin:$IntelPATH:$InitialPATH
-echo $PATH
 echo "MPITest stage: checking of swithing to MPICH"
 mpiexec -version
 IMB-MPI1 -help
