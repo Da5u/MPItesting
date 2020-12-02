@@ -35,7 +35,7 @@ echo "MPITest stage: Performing configuration of variables for MPICH test by Int
 export PATH=$MPICHInstallDir/bin:$IntelPATH:$InitialPATH
 echo $PATH
 echo "MPITest stage: checking of swithing to MPICH"
-mpiexec -info
+mpiexec -version
 IMB-MPI1 -help
 echo "MPITest stage: Performing of Intel MPI Benchmarks test for MPICH and work of Intel MPI Benchmarks"
 mpirun -version 2>&1 | tee MPICHBenchmarkTestResults.txt
