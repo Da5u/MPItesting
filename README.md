@@ -1,5 +1,5 @@
 	Rre-requirements:
-	1. You neet to have supported version on Linux OS for both MPI Lib. Also please take into account OS also needs support for getting updates/upgrades.
+	1. You need to have supported version on Linux OS for both MPI Lib. Also please take into account OS also needs support for getting updates/upgrades.
 		Look at Minimum System Requirements for Intel MPI Libs https://software.intel.com/content/www/us/en/develop/tools/mpi-library/choose-download/linux.html, for now the latest version is 2019.9.204;
 			installation guide https://software.intel.com/content/www/us/en/develop/documentation/mpi-developer-guide-linux/top/installation-and-prerequisites.html; 
 		Look at supported OS versions for MPICH https://www.mpich.org/downloads/, for now the latest stable release  mpich-3.3.2
@@ -9,14 +9,14 @@
 			installation guide https://software.intel.com/content/www/us/en/develop/articles/intel-mpi-benchmarks.html
 			How to use Intel MPI Benchmarks https://software.intel.com/content/www/us/en/develop/documentation/imb-user-guide/top.html
 	3. You may use VirtualBox 6.1 and ubuntu-18.04.5-live-server-amd64.iso fie from https://releases.ubuntu.com/18.04/ for getting of VM Ubuntu server 20.04 
-		and connect through SSH using "Remote - SSH" extentions for Visual Studio Code (version 1.51.1 in my case)
-	4. You need to install all dependencies and updates/upgrades, such as in my case for Ubuntu 18.04 version (you can run in under ROOT, in this case just don't tipe "sudo"):
+		and connect through SSH using "Remote - SSH" extensions for Visual Studio Code (version 1.51.1 in my case)
+	4. You need to install all dependencies and updates/upgrades, such as in my case for Ubuntu 18.04 version (you can run in under ROOT, in this case just don't type "sudo"):
 		- getting updates, you need to run "sudo apt update -y"
 		- getting upgrades, you need to run "sudo apt upgrade -y"
 		- wget, you need to run "sudo apt-get install -y wget"
 		- gcc, you need to run "sudo apt-get install -y gcc"
 			g++, you need to run "sudo apt-get install -y g++"
-			you may not install g++, if you don't need to build any C++ programms, you can disable c++ support using --disable-cxx, can include fortran excluding --disable-fortran
+			you may not install g++, if you don't need to build any C++ programs, you can disable c++ support using --disable-cxx, can include Fortran excluding --disable-fortran
 			look at comment "here you can change compilers, gcc is required (https://www.mpich.org/static/downloads/1.4/mpich2-1.4-README.txt)" in MPIBuild.sh script
 		- make, you need to run  "sudo apt-get install -y make"
 
@@ -41,7 +41,7 @@
 4. Installation directories for libs are following: 
 	for Intel MPI Lib installation directory is "/opt/intel",
 	for MPICH installation directory is "/opt/mpich".
-5. Notes about swithing between Libs and work of Intel MPI Benchmarks
+5. Notes about switching between Libs and work of Intel MPI Benchmarks
 	Intel MPI Benchmarks and Lib start to work only after configuration of environment by running mpivars.sh script
 	"/opt/intel/compilers_and_libraries_2020.4.304/linux/mpi/intel64/bin/mpivars.sh" and "/opt/intel/impi/2019.9.304/intel64/bin/mpivars.sh" the same files.
 6. Test results from Intel MPI Benchmarks are placed into "MPITest" folder and named "MPICHBenchmarkTestResults.txt" and "MPIIBenchmarkTestResults.txt".
