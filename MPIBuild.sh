@@ -8,10 +8,12 @@ fi
 if [ -z "$BuildDir" ]; then
 	BuildDir=$(pwd)
 fi
+if [ -z "$MPICHInstallDir" ]; then
+	MPICHInstallDir=/opt/mpich
+fi
 MPIIntelBuildDir=MPIIntelBuild
 MPICHBuildDir=MPICHBuild
 MPICHSourceDir=MPICHSource
-MPICHInstallDir=/opt/mpich
 echo "MPIBuild stage: Starting of MPIBuild.sh script with the following parameters: from directory $MPIBuildDir at $TimeStamp"
 
 echo "MPIBuild stage: Performing of log clean-up"

@@ -6,6 +6,7 @@ BuildDir=$(pwd)
 MPIBuildDir=MPIBuild
 MPITestDir=MPITest
 MPITestResultsDir=MPITestResults
+MPICHInstallDir=/opt/mpich
 
 # Defining of steps to perform
 BuildMPIThings=TRUE
@@ -19,6 +20,7 @@ export BuildDir
 export MPIBuildDir
 export MPITestDir
 export MPITestResultsDir
+export MPICHInstallDir
 
 echo "Main stage: Performing of log clean-up"
 rm MainExTaskLog.txt
@@ -32,7 +34,7 @@ then
 		bash MPIBuild.sh 2>&1 | tee MPIBuildLog.txt
 	else
 		echo "Main stage: Skipping of MPIBuild stage because MPIBuild.sh doesn't exist in $BuildDir, please chech if you download all files"
-		exit	
+		exit
 	fi
 else 
 	echo "Main stage: Skipping of MPIBuild stage because parameter BuildMPIThings was set to any value except TRUE"
