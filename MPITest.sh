@@ -5,7 +5,11 @@ TimeStamp=$(date +%d.%m.%Y_%T)
 if [ -z "$MPITestDir" ]; then
 	MPITestDir=MPITest
 fi
-MPICHInstallDir=/opt/mpich
+if [ -z "$MPICHInstallDir" ]; then
+	MPICHInstallDir=/opt/mpich
+fi
+InitialPATH=$PATH
+IntelPATH=/opt/intel/compilers_and_libraries_2020.4.304/linux/mpi/intel64/bin
 echo "MPITest stage: Starting of MPITest.sh script with the following parameters: from directory $MPITestDir at $TimeStamp"
 
 echo "MPITest stage: Performing of log clean-up"
@@ -28,9 +32,10 @@ mpirun -np 2 IMB-MPI1 PingPong -off_cache -1  2>&1 | tee -a MPIIBenchmarkTestRes
 
 # Running Benchmarks for MPICH
 echo "MPITest stage: Performing configuration of variables for MPICH test by Intel MPI Benchmarks"
-export PATH=$MPICHInstallDir/bin:$PATH
+export PATH=$MPICHInstallDir/bin:$IntelPATH:$InitialPATH
+echo $PATH
 echo "MPITest stage: checking of swithing to MPICH"
-mpiexec -version
+mpiexec -info
 IMB-MPI1 -help
 echo "MPITest stage: Performing of Intel MPI Benchmarks test for MPICH and work of Intel MPI Benchmarks"
 mpirun -version 2>&1 | tee MPICHBenchmarkTestResults.txt
