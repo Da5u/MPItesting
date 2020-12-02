@@ -9,7 +9,7 @@ MPITestResultsDir=MPITestResults
 MPICHInstallDir=/opt/mpich
 
 # Defining of steps to perform
-BuildMPIThings=FALSE
+BuildMPIThings=TRUE
 TestMPILibs=TRUE
 GetTestResults=FALSE
 
